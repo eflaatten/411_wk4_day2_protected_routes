@@ -20,11 +20,15 @@ const Login = () => {
     });
   };
 
+
   const login = (e) => {
     e.preventDefault();
     // set cookie here
+    const setCookie = (name, value, maxAge) => {
+      document.cookie = `${name}=${value};max-age=${maxAge}`;
+    }
     // set loggedIn = true and max-age = 60*1000 (one minute)
-
+    setCookie('loggedIn', true, 60)
     navigate("/");
   };
 
